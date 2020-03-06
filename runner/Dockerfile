@@ -4,7 +4,7 @@ ARG RUNNER_VERSION
 ARG DOCKER_VERSION
 
 RUN apt update \
-  && apt install curl ca-certificates -y --no-install-recommends \
+  && apt install curl ca-certificates iputils-ping -y --no-install-recommends \
   && curl -L -o docker.tgz https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz \
   && tar zxvf docker.tgz \
   && install -o root -g root -m 755 docker/docker /usr/local/bin/docker \
